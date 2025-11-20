@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <style>
+            .mainbtn {
+                width: 150px;
+                height: 130px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+            /* anchor wrapper for svg buttons */
+            .svg-link { display: inline-block; text-decoration: none; }
+            .svg-link .mainbtn { cursor: pointer; }
+            .svg-link:focus { outline: 3px solid #ffd; outline-offset: 3px; }
+            .btnfont {
+                font-family: "Aptos", Calibri, sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                fill: white;
+            }
+            /* accessible styled tooltip */
+            .svg-link { position: relative; }
+            .tooltip-text {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 100%;
+                margin-bottom: 8px;
+                background: rgba(0,0,0,0.85);
+                color: #fff;
+                padding: 6px 8px;
+                border-radius: 4px;
+                font-size: 13px;
+                white-space: nowrap;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .12s ease;
+                z-index: 20;
+            }
+            .tooltip-text::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 100%;
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid rgba(0,0,0,0.85);
+            }
+            .svg-link:focus-within .tooltip-text,
+            .svg-link:hover .tooltip-text {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        </style>
+        <script>
+            // Accessible tooltip toggling: on show, set aria-describedby on the trigger; on hide, remove it.
+            (function(){
+                const anchors = document.querySelectorAll('.svg-link');
+                anchors.forEach(a => {
+                    const tooltip = a.querySelector('.tooltip-text');
+                    if(!tooltip) return;
+
+                    const show = () => {
+                        tooltip.setAttribute('aria-hidden','false');
+                        a.setAttribute('aria-describedby', tooltip.id);
+                    };
+                    const hide = () => {
+                        tooltip.setAttribute('aria-hidden','true');
+                        if(a.getAttribute('aria-describedby') === tooltip.id) {
+                            a.removeAttribute('aria-describedby');
+                        }
+                    };
+
+                    a.addEventListener('mouseenter', show);
+                    a.addEventListener('mouseleave', hide);
+                    a.addEventListener('focusin', show);
+                    a.addEventListener('focusout', hide);
+                    a.addEventListener('keydown', (ev) => {
+                        if(ev.key === 'Escape' || ev.key === 'Esc') hide();
+                    });
+                });
+            })();
+        </script>
+    </head>
+    <body>
+        <a href="https://docs.google.com/spreadsheets/d/1-XO9joytQjjv__RmD354SaN_aoDGerO7A5jhviQQKRQ/edit?gid=0#gid=0" 
+                class="svg-link" aria-label="Open Meet Sign-Up spreadsheet (opens in new tab)" 
+                title="Open Meet Sign-Up spreadsheet (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="mainbtn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <g transform="translate(15,0)">
+                <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+                    <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid meet">
+                    <g>
+                        <path
+                            d="M2,21h8a1,1,0,0,0,0-2H3.071A7.011,7.011,0,0,1,10,13a5.044,5.044,0,1,0-3.377-1.337A9.01,9.01,0,0,0,1,20,1,1,0,0,0,2,21ZM10,5A3,3,0,1,1,7,8,3,3,0,0,1,10,5ZM23,16a1,1,0,0,1-1,1H19v3a1,1,0,0,1-2,0V17H14a1,1,0,0,1,0-2h3V12a1,1,0,0,1,2,0v3h3A1,1,0,0,1,23,16Z"
+                            fill="white" />
+                    </g>
+                </svg>
+                <text x="60" y="62" text-anchor="middle" class="btnfont" dominant-baseline="middle">
+                    <tspan x="60" dy="0">Sign Up for</tspan>
+                    <tspan x="60" dy="1.2em">a Meet<tspan font-size="0.8em" dx="1" dy="-2" aria-hidden="true">&#x1F517;</tspan></tspan>
+                </text>
+                        </g>
+                    </svg>
+            <span class="tooltip-text" id="tooltip-signup" role="tooltip" aria-hidden="true">Open sign-up spreadsheet (opens in new tab)</span>
+        </a>
+
+        <a href="https://www.gomotionapp.com/team/gslsc/page/officials--volunteers/new-gulf-officials" 
+                class="svg-link" aria-label="Become an official (opens in new tab)" 
+                title="Become an official (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="mainbtn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g transform="translate(15,0)">
+                    <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+                    <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid meet">
+                        <g fill="transparent" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="8" r="4" stroke-width="1.5" />
+                            <path d="M1 3 V11"/>
+                            <path d="M1 10.75 Q 1.6 12.2 2 12.5" />
+                            <path d="M2 12.5 C3.5 14, 6.1 17, 6.25 19.5" />
+                            <path d="M6.25 19.5 V24" />
+                            <path d="M15 19 V24"/>
+                            <path d="M18 24 V17.5 A3.5 3.5 0 0 0 14.5 14.25 L12 14.5 A6 6 0 0 1 4.5 8 V3 A1.5 1.5 0 0 0 1 3" />
+                        </g>
+                    </svg>
+                    <text x="60" y="62" text-anchor="middle" class="btnfont" dominant-baseline="middle">
+                        <tspan x="60" dy="0">Become an</tspan>
+                        <tspan x="60" dy="1.2em">Official<tspan font-size="0.8em" dx="1" dy="-2" aria-hidden="true">&#x1F517;</tspan></tspan>
+                    </text>
+                </g>
+            </svg>
+            <span class="tooltip-text" id="tooltip-gomotion" role="tooltip" aria-hidden="true">Become an official (opens in new tab)</span>
+        </a>
+
+        <a href="https://sites.google.com/view/fcst-officials/officials-main/junior-officials" 
+                class="svg-link" aria-label="Junior Officials"
+                title="Junior Officials" >
+            <svg class="mainbtn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g transform="translate(15,0)">
+                    <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+                    <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid meet">
+                        <g>
+                            <polygon points="1.5 9 12 3 22.5 9 12 15 1.5 9"
+                                fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                            <polyline points="5.25 11.25 5.25 17.25 12 21 18.75 17.25 18.75 11.25"
+                                fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                            <line x1="22.5" y1="17.25" x2="22.5" y2="9"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                            <line x1="12" y1="15" x2="12" y2="21"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                        </g>
+                    </svg>
+                    <text x="60" y="62" text-anchor="middle" class="btnfont" dominant-baseline="middle">
+                        <tspan x="60" dy="0">Junior</tspan>
+                        <tspan x="60" dy="1.2em">Officials</tspan>
+                    </text>
+                </g>
+            </svg>
+            <span class="tooltip-text" id="tooltip-faq" role="tooltip" aria-hidden="true">Junior Officials</span>
+        </a>
+
+        <a href="https://sites.google.com/view/fcst-officials/officials-main/questions" 
+                class="svg-link" aria-label="F.A.Q. - Officials"
+                title="F.A.Q. - Officials" >
+            <svg class="mainbtn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g transform="translate(15,0)">
+                    <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+                    <svg x="40" y="9" width="40" height="42" viewBox="0 0 48 52" version="1" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="#cc000c" stroke="white" stroke-width="3.0" d="M15,40h23l6,6V25c0-2.2-1.8-4-4-4H15c-2.2,0-4,1.8-4,4v11C11,38.2,12.8,40,15,40z">
+                            </path>
+                            <path fill="#ffffff"
+                                d="M28.8,32.8h-3.6l-0.7,2.1h-2.2l3.7-10h1.9l3.7,10h-2.2L28.8,32.8z M25.7,31.2h2.5L27,27.4L25.7,31.2z">
+                            </path>
+                            <path fill="#cc000c" stroke="white" stroke-width="3.0" d="M33,25H10l-6,6V8c0-2.2,1.8-4,4-4h25c2.2,0,4,1.8,4,4v13C37,23.2,35.2,25,33,25z">
+                            </path>
+                            <path fill="#ffffff"
+                                d="M25.4,14.2c0,1-0.2,1.8-0.5,2.5c-0.3,0.7-0.7,1.3-1.3,1.7l1.7,1.3L24,20.9l-2.2-1.7c-0.2,0-0.5,0.1-0.8,0.1 c-0.6,0-1.2-0.1-1.8-0.3c-0.5-0.2-1-0.6-1.4-1c-0.4-0.4-0.7-1-0.9-1.6c-0.2-0.6-0.3-1.3-0.3-2.1v-0.4c0-0.8,0.1-1.5,0.3-2.1 c0.2-0.6,0.5-1.2,0.9-1.6c0.4-0.4,0.8-0.8,1.4-1c0.5-0.2,1.1-0.3,1.8-0.3c0.6,0,1.2,0.1,1.8,0.3c0.5,0.2,1,0.6,1.4,1 c0.4,0.4,0.7,1,0.9,1.6c0.2,0.6,0.3,1.3,0.3,2.1V14.2z M23.2,13.7c0-1.1-0.2-1.9-0.6-2.4c-0.4-0.6-0.9-0.8-1.6-0.8 c-0.7,0-1.3,0.3-1.6,0.8c-0.4,0.6-0.6,1.4-0.6,2.4v0.5c0,0.5,0.1,1,0.2,1.4c0.1,0.4,0.2,0.8,0.4,1c0.2,0.3,0.4,0.5,0.7,0.6 c0.3,0.1,0.6,0.2,0.9,0.2c0.7,0,1.3-0.3,1.6-0.8c0.4-0.6,0.6-1.4,0.6-2.5V13.7z">
+                            </path>
+                        </g>
+                    </svg>
+                    <text x="60" y="62" text-anchor="middle" class="btnfont" dominant-baseline="middle">
+                        <tspan x="60" dy="0">F.A.Q.</tspan>
+                    </text>
+                </g>
+            </svg>
+            <span class="tooltip-text" id="tooltip-faq" role="tooltip" aria-hidden="true">F.A.Q. - Officials</span>
+        </a>
+
+        <a href="https://websitedevsa.blob.core.windows.net/sitefinity/docs/default-source/governance/governance-lsc-website/rules_policies/rulebooks/2025-rulebook.pdf" 
+                class="svg-link" aria-label="Open 2025 rulebook (opens in new tab)" 
+                title="Open 2025 rulebook (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="mainbtn" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <g transform="translate(15,0)">
+                    <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+                    <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke-width="0"></g>
+                        <g stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g>
+                            <path
+                                d="M7.25 7C7.25 6.58579 7.58579 6.25 8 6.25H16C16.4142 6.25 16.75 6.58579 16.75 7C16.75 7.41422 16.4142 7.75 16 7.75H8C7.58579 7.75 7.25 7.41422 7.25 7Z"
+                                fill="#ffffff"></path>
+                            <path
+                                d="M8 9.75C7.58579 9.75 7.25 10.0858 7.25 10.5C7.25 10.9142 7.58579 11.25 8 11.25H13C13.4142 11.25 13.75 10.9142 13.75 10.5C13.75 10.0858 13.4142 9.75 13 9.75H8Z"
+                                fill="#ffffff"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.94513 1.25C8.57754 1.24998 7.47521 1.24996 6.60825 1.36652C5.70814 1.48754 4.95027 1.74643 4.34835 2.34835C3.74643 2.95027 3.48754 3.70814 3.36652 4.60825C3.24996 5.47521 3.24998 6.57753 3.25 7.94512V16.0549C3.24998 17.4225 3.24996 18.5248 3.36652 19.3918C3.48754 20.2919 3.74643 21.0497 4.34835 21.6517C4.95027 22.2536 5.70814 22.5125 6.60825 22.6335C7.47522 22.75 8.57754 22.75 9.94513 22.75H14.0549C15.4225 22.75 16.5248 22.75 17.3918 22.6335C18.2919 22.5125 19.0497 22.2536 19.6517 21.6517C20.2536 21.0497 20.5125 20.2919 20.6335 19.3918C20.75 18.5248 20.75 17.4225 20.75 16.0549V7.94513C20.75 6.57754 20.75 5.47522 20.6335 4.60825C20.5125 3.70814 20.2536 2.95027 19.6517 2.34835C19.0497 1.74643 18.2919 1.48754 17.3918 1.36652C16.5248 1.24996 15.4225 1.24998 14.0549 1.25H9.94513ZM5.40901 3.40901C5.68577 3.13225 6.07435 2.9518 6.80812 2.85315C7.56347 2.75159 8.56459 2.75 10 2.75H14C15.4354 2.75 16.4365 2.75159 17.1919 2.85315C17.9257 2.9518 18.3142 3.13225 18.591 3.40901C18.8678 3.68577 19.0482 4.07435 19.1469 4.80812C19.2484 5.56347 19.25 6.56459 19.25 8V15.25L7.78198 15.25C6.96402 15.2497 6.40587 15.2495 5.92721 15.3778C5.49923 15.4925 5.10224 15.6798 4.75 15.9259V8C4.75 6.56459 4.75159 5.56347 4.85315 4.80812C4.9518 4.07435 5.13225 3.68577 5.40901 3.40901ZM4.77676 18.2491C4.79196 18.6029 4.81579 18.914 4.85315 19.1919C4.9518 19.9257 5.13225 20.3142 5.40901 20.591C5.68577 20.8678 6.07435 21.0482 6.80812 21.1469C7.56347 21.2484 8.56459 21.25 10 21.25H14C15.4354 21.25 16.4365 21.2484 17.1919 21.1469C17.9257 21.0482 18.3142 20.8678 18.591 20.591C18.8678 20.3142 19.0482 19.9257 19.1469 19.1919C19.2297 18.5756 19.246 17.7958 19.2492 16.75H7.89778C6.91952 16.75 6.57752 16.7564 6.31544 16.8267C5.59612 17.0194 5.02268 17.5541 4.77676 18.2491Z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </svg>
+                    <text x="60" y="62" text-anchor="middle" class="btnfont" dominant-baseline="middle">
+                        <tspan x="60" dy="0">USA Swimming</tspan>
+                        <tspan x="60" dy="1.2em">Rulebook<tspan font-size="0.8em" dx="1" dy="-2" aria-hidden="true">&#x1F517;</tspan></tspan>
+                    </text>
+                </g>
+            </svg>
+        <span class="tooltip-text" id="tooltip-rulebook" role="tooltip" aria-hidden="true">Open 2025 rulebook (opens in new tab)</span>
+        
+    </body>
+</html>
