@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100">
+  <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+  <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24">
+    <g>
+      <path d="M2,21h8a1,1,0,0,0,0-2H3.071A7.011,7.011,0,0,1,10,13a5.044,5.044,0,1,0-3.377-1.337A9.01,9.01,0,0,0,1,20,1,1,0,0,0,2,21ZM10,5A3,3,0,1,1,7,8,3,3,0,0,1,10,5ZM23,16a1,1,0,0,1-1,1H19v3a1,1,0,0,1-2,0V17H14a1,1,0,0,1,0-2h3V12a1,1,0,0,1,2,0v3h3A1,1,0,0,1,23,16Z" fill="white" />
+    </g>
+  </svg>
+  <text x="60" y="62" text-anchor="middle" font-family="Aptos, Calibri, sans-serif" font-size="16" font-weight="bold" fill="white" dominant-baseline="middle">
+    <tspan x="60" dy="0">Sign Up for</tspan>
+    <tspan x="60" dy="1.2em">a Meet<tspan font-size="13" dx="1" dy="-2" aria-hidden="true">🔗</tspan></tspan>
+  </text>
+</svg>

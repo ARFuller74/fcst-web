@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100">
+  <rect width="120" height="100" rx="8" ry="8" fill="#cc000c" />
+  <svg x="40" y="6" width="40" height="40" viewBox="0 0 24 24">
+    <g fill="transparent" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="8" r="4" stroke-width="1.5" />
+      <path d="M1.5 3 V11" />
+      <path d="M1.5 10.75 Q 1.6 12.2 2 12.5" />
+      <path d="M2 12.5 C3.5 14, 6.1 17, 6.25 19.5" />
+      <path d="M6.25 19.5 V24" />
+      <path d="M15 19 V24" />
+      <path d="M18 24 V17.5 A3.5 3.5 0 0 0 14.5 14.25 L12 14.5 A6 6 0 0 1 4.5 8 V3 A1.5 1.5 0 0 0 1.5 3" />
+    </g>
+  </svg>
+  <text x="60" y="62" text-anchor="middle" font-family="Aptos, Calibri, sans-serif" font-size="16" font-weight="bold" fill="white" dominant-baseline="middle">
+    <tspan x="60" dy="0">Become an</tspan>
+    <tspan x="60" dy="1.2em">Official<tspan font-size="13" dx="1" dy="-2" aria-hidden="true">🔗</tspan></tspan>
+  </text>
+</svg>
